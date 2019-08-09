@@ -1,17 +1,16 @@
-<script src="./.eslintrc.js"></script>
 <template>
   <div id="app">
     <div class="soubg">
       <div class="sou">
         <!--Begin 所在收货地区 Begin-->
         <span class="s_city_b">
-        	<span class="fl">送货至：</span>
+        <span class="fl">送货至：</span>
             <span class="s_city">
-            	<span>四川</span>
+              <span>四川</span>
                 <div class="s_city_bg">
-                	<div class="s_city_t"></div>
+                  <div class="s_city_t"></div>
                     <div class="s_city_c">
-                    	<h2>请选择所在的收货地区</h2>
+                      <h2>请选择所在的收货地区</h2>
                         <table border="0" class="c_tab" style="width:235px; margin-top:10px;" cellspacing="0" cellpadding="0">
                           <tr>
                             <th>A</th>
@@ -80,27 +79,29 @@
         </span>
         <!--End 所在收货地区 End-->
         <span class="fr">
-        	<span class="fl">你好，请<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
-        	<span class="ss">
-            	<div class="ss_list">
-                	<a href="#">收藏夹</a>
+        <span class="fl"  v-if="name===''">你好，请<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+        <span class="fl" v-else>{{name}}&nbsp;&nbsp;<router-link to="/Userinfo"><a>个人中心</a></router-link>&nbsp;</span>
+        <span class="ss">
+          <div class="ss_list">
+            <a href="#">收藏夹</a>
                     <div class="ss_list_bg">
-                    	<div class="s_city_t"></div>
+                      <div class="s_city_t"></div>
                         <div class="ss_list_c">
-                        	<ul>
-                            	<li><a href="#">我的收藏夹</a></li>
-                                <li><a href="#">我的收藏夹</a></li>
+                          <ul>
+                                <li><router-link to="/Buycar">
+                <a>购物车</a>
+              </router-link></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="ss_list">
-                	<a href="#">客户服务</a>
+                  <a href="#">客户服务</a>
                     <div class="ss_list_bg">
-                    	<div class="s_city_t"></div>
+                      <div class="s_city_t"></div>
                         <div class="ss_list_c">
-                        	<ul>
-                            	<li><a href="#">客户服务</a></li>
+                          <ul>
+                            <li><a href="#">客户服务</a></li>
                                 <li><a href="#">客户服务</a></li>
                                 <li><a href="#">客户服务</a></li>
                             </ul>
@@ -108,44 +109,48 @@
                     </div>
                 </div>
                 <div class="ss_list">
-                	<a href="#">网站导航</a>
+                  <a href="#">网站导航</a>
                     <div class="ss_list_bg">
-                    	<div class="s_city_t"></div>
+                      <div class="s_city_t"></div>
                         <div class="ss_list_c">
-                        	<ul>
-                            	<li><a href="#">网站导航</a></li>
+                          <ul>
+                            <li><a href="#">网站导航</a></li>
                                 <li><a href="#">网站导航</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </span>
-            <span class="fl">|&nbsp;关注我们：</span>
-            <span class="s_sh"><a href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span>
+<!--            <span class="fl">你好，请<a href="Login.html">登录</a></span>-->
+<!--            <span class="fl" v-else>{{name}}</span>-->
+            <span class="s_sh"><a href="#" class="sh1"></a><a href="#" class="sh2">微信</a></span>
             <span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="./assets/images/s_tel.png" align="absmiddle" /></a></span>
         </span>
       </div>
     </div>
-<!--    <img src="./assets/logo.png">-->
 
     <router-view/>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App'
+  data () {
+    return {
+      name:localStorage.getItem("name")
+    }
+  }
 }
 </script>
-
+<!--<link rel="">-->
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  /*@import "./assets/css/style.css";*/
+  /*#app {*/
+/*  font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
+/*  text-align: center;*/
+/*  color: #2c3e50;*/
+/*  margin-top: 60px;*/
+/*}*/
 </style>

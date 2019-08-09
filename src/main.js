@@ -3,11 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import axios from '../node_modules/axios'
 
 
 Vue.config.productionTip = false
-
+Vue.prototype.url="http://localhost/blog/public/api/"
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
