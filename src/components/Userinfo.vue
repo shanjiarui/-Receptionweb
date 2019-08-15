@@ -53,7 +53,7 @@
               <div class="left_m_t t_bg1">订单中心</div>
               <ul>
                 <li><a href="Member_Order.html">我的订单</a></li>
-                <li><a href="Member_Address.html">收货地址</a></li>
+                <li><router-link to="/Address"><a>收货地址</a></router-link></li>
                 <li><a href="#">缺货登记</a></li>
                 <li><a href="#">跟踪订单</a></li>
               </ul>
@@ -254,17 +254,13 @@
               token:this.token
             })
               .then(function (response) {
-                // console.log(response.status)
-                // if (response.message=='Unauthorized') {
-                //   _this.email=response.data.email
-                //   _this.id=response.data.id
-                // }else{
-                //
-                // }
-
+                  _this.email=response.data.email
+                  _this.id=response.data.id
+                console.log(response)
               })
               .catch(function (error) { // 请求失败处理
-                console.log(error);
+                alert("用户信息已过期!请重新登陆!")
+                _this.$router.push({path:'/login'})
               });
           }
 

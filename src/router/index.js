@@ -10,6 +10,7 @@ import Buycar from '@/components/Buycar'
 import Buycartwo from '@/components/Buycartwo'
 import Buycarthree from '@/components/Buycarthree'
 import Goods from '@/components/Goods'
+import Address from '@/components/Address'
 Vue.use(Router)
 export default new Router({
   routes:[
@@ -62,6 +63,11 @@ export default new Router({
       path: '/Goods',
       name: 'Goods',
       component: Goods
+    },
+    {
+      path: '/Address',
+      name: 'Address',
+      component: Address
     },
   ]
 

@@ -817,7 +817,6 @@
                 var _this=this
                 axios.post(this.url+"add_buycar",{
                   specs_id:this.specs_id,
-                  id:localStorage.getItem("id"),
                   num:this.num,
                   token:localStorage.getItem("token")
                 })
@@ -842,7 +841,7 @@
           // console.log(_this.num)
           this.id=this.$route.query.goods_id
           // console.log(this.id)
-          axios.get(this.url+"goods?goods_id="+this.id)
+          axios.get(this.url+"goods?goods_id="+_this.id)
             .then(function (response) {
               _this.specs=response.data.data
               _this.name=response.data.name
